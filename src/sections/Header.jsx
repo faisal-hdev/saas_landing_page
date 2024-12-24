@@ -26,6 +26,7 @@ const Header = () => {
       offset={-100}
       spy
       smooth
+      activeClass="nav-active"
       className="base-bold text-p4 uppercase transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
     >
       {title}
@@ -41,12 +42,9 @@ const Header = () => {
     >
       <div className="container flex h-14 items-center max-lg:px-5 ">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
-          <img
-            src="/images/xora.svg"
-            width={115}
-            height={55}
-            alt="heder logo"
-          />
+          <LinkScroll to="hero" offset={-250} spy smooth>
+            <img src="/images/xora.svg" width={115} height={55} alt="logo" />
+          </LinkScroll>
         </a>
         <div
           className={clsx(
@@ -74,8 +72,8 @@ const Header = () => {
                   >
                     <img
                       src="/images/xora.svg"
-                      width={150}
-                      height={50}
+                      width={160}
+                      height={55}
                       alt="logo"
                     />
                   </LinkScroll>
@@ -110,8 +108,9 @@ const Header = () => {
           className="lg:hidden z-2 size-10 border-2 border-s4/25 rounded-full flex justify-center items-center"
         >
           <img
-            className="size-1/2 object-contain"
             src={`/images/${isOpen ? "close" : "magic"}.svg`}
+            className="size-1/2 object-contain"
+            alt="magic"
           />
         </button>
       </div>
