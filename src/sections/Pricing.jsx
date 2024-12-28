@@ -99,7 +99,7 @@ const Pricing = () => {
                         index === 1 ? "text-p3" : "text-p4"
                       )}
                     >
-                      ${" "}
+                      $
                       <CountUp
                         start={plan.priceMonthly}
                         end={monthly ? plan.priceMonthly : plan.priceYearly}
@@ -108,8 +108,34 @@ const Pricing = () => {
                         preserveValue
                       />
                     </div>
+                    <div className="small-1 relative top-3 ml-1 uppercase">
+                      / mo
+                    </div>
                   </div>
                 </div>
+                <div
+                  className={clsx(
+                    "body-1 relative z-2 mb-10 w-full border-b-s2 uppercase pb-9 text-center text-p4",
+                    index === 1 ? "border-b" : ""
+                  )}
+                >
+                  {plan.caption}
+                </div>
+                <ul className="mx-auto space-y-4 xl:px-7">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="relative flex items-center gap-5"
+                    >
+                      <img
+                        src={"/images/check.png"}
+                        alt="check"
+                        className="size-10 object-contain"
+                      />
+                      <p className="flex-1">{feature}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
