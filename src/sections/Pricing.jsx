@@ -140,7 +140,7 @@ const Pricing = () => {
                   <Button icon={plan.icon}>Get Stared</Button>
                 </div>
                 {index === 1 && (
-                  <p className="small-compact mt-9 text-center before:mx-2.5 text-p3 before:content-['-'] after:mx-2.5 after:content-['-']">
+                  <p className=" max-md:hidden small-compact mt-9 text-center before:mx-2.5 text-p3 before:content-['-'] after:mx-2.5 after:content-['-']">
                     Limited time offer
                   </p>
                 )}
